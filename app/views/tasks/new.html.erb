@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>New Task</h1>
+  <div class="d-flex align-items-center mb-2">
+    <%= form_with model: @empty_task do |form| %>
+      <%= form.label :title, "Title:" %>
+      <%= form.text_field :title %>
+      <%= form.label :details, "Details:" %>
+      <%= form.text_field :details %>
+      <%= form.label :completed, "Completed:" %>
+      <%= form.check_box :completed %>
+      <%= form.submit "Create Task" %>
+    <% end %>
+</div>
+
+<%= link_to "Back to list", list_path %>
+
+</div>

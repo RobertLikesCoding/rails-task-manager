@@ -5,13 +5,17 @@
 
 <% @tasks.each do |task| %>
   <div class="d-flex align-items-center mb-2 border">
-    <% link_to  %>
-    <label>
-      <input type="checkbox" name="done" id="done" class="m-2"/>
-      <%= link_to task.title, find_path(task.id) %>
-    </label>
+      <label>
+      <%= check_box_tag "task_ids[]", task.id, task.completed, id: "task_#{task.id}_completed" %>
+        <%= link_to task.title, find_path(task) %>
+      </label>
+
+      <%= link_to "🗑️", find_path(task), data: {turbo_method: "delete"} %>
+
   </div>
 <% end %>
-</div>
-
 </form>
+
+<%= link_to "Create New Task", new_task_path %>
+
+</div>
