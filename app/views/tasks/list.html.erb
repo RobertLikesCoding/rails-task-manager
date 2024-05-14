@@ -1,14 +1,14 @@
-<div class="container my-3">
+<div class="m-3">
 <h1>My tasks</h1>
 
 <form action="/list">
 
 <% @tasks.each do |task| %>
-  <div class="d-flex align-items-center mb-2 border">
-      <label>
-      <%= check_box_tag "task_ids[]", task.id, task.completed, id: "task_#{task.id}_completed" %>
+  <div class="d-flex align-items-center p-1 my-2 rounded todo justify-content-between">
+      <div class="p-1">
+        <%= check_box_tag "task_ids[]", task.id, task.completed %>
         <%= link_to task.title, find_path(task) %>
-      </label>
+      </div>
 
       <%= link_to "🗑️", find_path(task), data: {turbo_method: "delete"} %>
 
@@ -16,6 +16,8 @@
 <% end %>
 </form>
 
+<button class="rounded btn-light btn border">
 <%= link_to "Create New Task", new_task_path %>
+</button>
 
 </div>

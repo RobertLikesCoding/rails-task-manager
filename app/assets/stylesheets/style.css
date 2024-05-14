@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+}
+
+a {
+  color: black;
+}
+
+input {
+  background-color: aquamarine;
+  border-radius: 8px;
+  color: black;
+}
+
+.todo {
+  background-color: aquamarine;
+
+}
