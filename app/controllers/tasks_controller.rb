@@ -21,12 +21,12 @@ class TasksController < ApplicationController
   end
 
   def update
-    task.update(task_params)
-    redirect_to find_path(task)
+    @task.update(task_params)
+    redirect_to find_path(@task)
   end
 
   def destroy
-    task.destroy
+    @task.destroy
     redirect_to list_path
   end
 
